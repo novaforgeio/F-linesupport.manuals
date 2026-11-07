@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>製品説明動画 | F LINE SUPPORT</title>
+<meta name="description" content="OlyLife 製品の使い方・紹介動画のまとめ（Fラインサポート）">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0a1a3a; --navy-deep:#050d20; --navy-card:#0f2149; --navy-line:#1d3366;
+    --gold:#c9a254; --gold-soft:#e6c77a; --gold-dim:#8c6f2f;
+    --ink:#f3ecd9; --muted:#aeb7cc; --shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif;background:var(--navy-deep);color:var(--ink);line-height:1.7;padding-bottom:76px}
+  a{color:inherit;text-decoration:none}
+  button{font-family:inherit;cursor:pointer;border:0;background:none}
+  .serif{font-family:"Cormorant Garamond","Noto Serif JP",serif}
+
+  /* ヘッダー（ロゴ） */
+  .top{background:radial-gradient(120% 90% at 50% 0%,#15295a 0%,var(--navy) 55%,var(--navy-deep) 100%);color:#fff;padding:22px 16px 30px;text-align:center}
+  .top .inner{max-width:960px;margin:0 auto}
+  .brand{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .brand .logo{font-weight:700;letter-spacing:.22em;font-size:12px;color:var(--gold)}
+  .brand a.back{font-size:12px;color:var(--gold-soft);border:1px solid rgba(201,162,84,.5);border-radius:999px;padding:5px 12px}
+  .emblem{width:132px;height:132px;border-radius:50%;margin:18px auto 0;display:block;box-shadow:0 0 0 1px rgba(201,162,84,.35),0 12px 36px rgba(0,0,0,.45)}
+  h1{font-size:30px;font-weight:600;line-height:1.25;margin-top:16px;letter-spacing:.06em;color:var(--gold-soft)}
+  .rule{display:flex;align-items:center;justify-content:center;gap:10px;margin:10px auto 0;color:var(--gold)}
+  .rule i{display:block;height:1px;width:72px;background:linear-gradient(90deg,transparent,var(--gold));}
+  .rule i:last-child{background:linear-gradient(90deg,var(--gold),transparent)}
+  .rule b{display:block;width:7px;height:7px;background:var(--gold);transform:rotate(45deg)}
+  .lead{color:var(--muted);font-size:13px;margin-top:12px}
+  .count{display:inline-block;margin-top:12px;background:rgba(201,162,84,.12);color:var(--gold-soft);border:1px solid rgba(201,162,84,.45);border-radius:999px;font-size:12px;font-weight:700;padding:3px 14px;letter-spacing:.04em}
+
+  /* 検索・絞り込み */
+  .tools{max-width:960px;margin:-18px auto 0;padding:0 16px;position:relative}
+  .search{display:flex;align-items:center;gap:8px;background:var(--navy-card);border:1px solid rgba(201,162,84,.45);border-radius:14px;padding:11px 14px;box-shadow:var(--shadow)}
+  .search svg{width:18px;height:18px;flex:none;color:var(--gold)}
+  .search input{flex:1;border:0;outline:0;font-size:15px;font-family:inherit;background:transparent;color:var(--ink)}
+  .search input::placeholder{color:#7f8aa6}
+  .chips{display:flex;gap:8px;overflow-x:auto;padding:14px 0 4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:none;border:1px solid var(--navy-line);background:var(--navy-card);color:var(--muted);font-size:13px;font-weight:700;border-radius:999px;padding:7px 14px;white-space:nowrap}
+  .chip.on{background:var(--gold);color:var(--navy-deep);border-color:var(--gold)}
+
+  /* 一覧 */
+  main{max-width:960px;margin:0 auto;padding:10px 16px 0}
+  .grid{display:grid;grid-template-columns:1fr;gap:16px}
+  @media(min-width:640px){.grid{grid-template-columns:1fr 1fr}}
+  @media(min-width:960px){.grid{grid-template-columns:1fr 1fr 1fr}}
+  .card{background:var(--navy-card);border:1px solid var(--navy-line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;position:relative}
+  .card::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);z-index:1}
+  .thumb{position:relative;aspect-ratio:16/9;background:#071024;cursor:pointer}
+  .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .thumb iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(5,13,32,.28)}
+  .play span{width:56px;height:56px;border-radius:50%;background:rgba(201,162,84,.95);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.45)}
+  .play svg{width:24px;height:24px;color:var(--navy-deep);margin-left:3px}
+  .dur{position:absolute;right:8px;bottom:8px;background:rgba(5,13,32,.7);color:var(--gold-soft);font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;border:1px solid rgba(201,162,84,.4)}
+  .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .tag{font-size:11px;font-weight:700;border-radius:999px;padding:2px 9px;background:rgba(255,255,255,.06);color:var(--muted);border:1px solid var(--navy-line)}
+  .tag.gold{background:rgba(201,162,84,.14);color:var(--gold-soft);border-color:rgba(201,162,84,.45)}
+  .card h2{font-size:16px;font-weight:700;line-height:1.45;color:#fff}
+  .card p{font-size:13px;color:var(--muted)}
+  .card .yt{margin-top:auto;padding-top:8px;font-size:12px;color:var(--gold);font-weight:700;display:inline-flex;align-items:center;gap:4px}
+  .empty{text-align:center;color:var(--muted);padding:40px 0;font-size:14px}
+
+  /* 注意 */
+  .note{max-width:960px;margin:28px auto 0;padding:0 16px}
+  .note div{background:rgba(255,255,255,.04);border:1px solid var(--navy-line);border-radius:14px;padding:14px 16px;font-size:12px;color:var(--muted);line-height:1.8}
+  .note b{color:var(--gold-soft)}
+
+  /* 下部固定 */
+  .bottom{position:fixed;left:0;right:0;bottom:0;background:rgba(5,13,32,.94);backdrop-filter:blur(8px);border-top:1px solid rgba(201,162,84,.35);padding:10px 16px calc(10px + env(safe-area-inset-bottom))}
+  .bottom .inner{max-width:960px;margin:0 auto;display:flex;gap:10px}
+  .bottom a{flex:1;text-align:center;font-size:13px;font-weight:700;border-radius:12px;padding:11px 8px;border:1px solid rgba(201,162,84,.5);background:transparent;color:var(--gold-soft)}
+  .bottom a.main{background:var(--gold);color:var(--navy-deep);border-color:var(--gold)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="inner">
+    <div class="brand">
+      <span class="logo">F LINE SUPPORT</span>
+      <a class="back" href="https://oly-aj.com/member/">会員トップへ</a>
+    </div>
+    <img class="emblem" src="logo.png" alt="F LINE SUPPORT">
+    <h1 class="serif">製品説明動画</h1>
+    <div class="rule"><i></i><b></b><i></i></div>
+    <p class="lead">OlyLife 製品の使い方と紹介の動画をまとめています。タップすると、このページの中で再生できます。</p>
+    <span class="count" id="count"></span>
+  </div>
+</header>
+
+<section class="tools">
+  <label class="search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+    <input id="q" type="search" placeholder="製品名で探す（例：A9、P90）" autocomplete="off">
+  </label>
+  <div class="chips" id="chips"></div>
+</section>
+
+<main>
+  <div class="grid" id="grid"></div>
+  <p class="empty" id="empty" hidden>見つかりませんでした。別の言葉で探してみてください。</p>
+</main>
+
+<section class="note">
+  <div>
+    <b>ご覧になる前に</b><br>
+    ・動画は製品の<b>使い方・お手入れ・紹介</b>をご案内するものです。体への効果や病気の改善を約束するものではありません。<br>
+    ・製品は<b>雑品（健康機器ではありません）</b>として販売しています。ご不明な点は担当カスタマーまでお問い合わせください。<br>
+    ・動画の内容と現在の製品仕様が異なる場合は、取扱説明書の記載が優先されます。
+  </div>
+</section>
+
+<nav class="bottom">
+  <div class="inner">
+    <a href="https://oly-aj.com/catalog/">製品カタログ・取扱説明書</a>
+    <a class="main" href="https://oly-aj.com/member/">会員トップ</a>
+  </div>
+</nav>
+
+<script>
+/* ===== 動画の一覧（ここに足す・直す） =====
+   yt      : YouTube の動画ID（URLの v= の後ろ）
+   product : 製品名（絞り込みのボタンになる）
+   kind    : 使い方 / 製品紹介 / 活動・プラン
+   title   : 動画の題
+   desc    : 1行の説明（効能・効果の表現は書かない）
+*/
+const VIDEOS = [
+  { yt: "Zp7S4U_xYhs", product: "A9",              kind: "使い方",       title: "A9 の使い方",                     desc: "OlyLife A9 の使い方をご案内する動画です。" },
+  { yt: "9TT5dI7c9Fg", product: "Tera-P90+",       kind: "使い方",       title: "Tera-P90+ の使い方（日本語解説）", desc: "Tera-P90+ の使用方法を日本語で解説します。" },
+  { yt: "IpTs7qm4Zzk", product: "Shaken Massager", kind: "使い方",       title: "Shaken Massager の使い方",         desc: "Shaken Massager の使用方法を解説する動画です。" },
+  { yt: "ciT3X9Jx9Ic", product: "Vitality Wand",   kind: "使い方",       title: "Vitality Wand の紹介・使い方",     desc: "Vitality Wand のご紹介と使い方の動画です。" },
+  { yt: "gcrpUfiS284", product: "SKYLINE",         kind: "製品紹介",     title: "SKYLINE 紹介映像",                 desc: "OlyLife SKYLINE のプロモーション映像です。" },
+  { yt: "Qhn9_4iDRyo", product: "プラン",           kind: "活動・プラン", title: "プランの勉強会",                   desc: "OlyLife のプランについての勉強会動画です。" },
+];
+/* ===== ここまで ===== */
+
+const grid = document.getElementById('grid'), chips = document.getElementById('chips');
+const q = document.getElementById('q'), empty = document.getElementById('empty'), count = document.getElementById('count');
+let filter = 'すべて';
+
+const products = ['すべて', ...Array.from(new Set(VIDEOS.map(v => v.product)))];
+products.forEach(p => {
+  const b = document.createElement('button');
+  b.className = 'chip' + (p === filter ? ' on' : ''); b.textContent = p; b.dataset.p = p;
+  b.onclick = () => { filter = p; [...chips.children].forEach(c => c.classList.toggle('on', c.dataset.p === p)); render(); };
+  chips.appendChild(b);
+});
+
+function esc(s){ return s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+function render(){
+  const kw = q.value.trim().toLowerCase();
+  const list = VIDEOS.filter(v => (filter === 'すべて' || v.product === filter) &&
+    (!kw || (v.title + v.product + v.desc + v.kind).toLowerCase().includes(kw)));
+  grid.innerHTML = list.map(v => `
+    <article class="card">
+      <div class="thumb" data-yt="${esc(v.yt)}" role="button" aria-label="${esc(v.title)} を再生">
+        <img loading="lazy" src="https://img.youtube.com/vi/${esc(v.yt)}/hqdefault.jpg" alt="">
+        <div class="play"><span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div>
+        <div class="dur">動画</div>
+      </div>
+      <div class="body">
+        <div class="tags"><span class="tag gold">${esc(v.product)}</span><span class="tag">${esc(v.kind)}</span></div>
+        <h2>${esc(v.title)}</h2>
+        <p>${esc(v.desc)}</p>
+        <a class="yt" href="https://www.youtube.com/watch?v=${esc(v.yt)}" target="_blank" rel="noopener">YouTube で開く ↗</a>
+      </div>
+    </article>`).join('');
+  empty.hidden = list.length > 0;
+  count.textContent = `${list.length} 本 / 全 ${VIDEOS.length} 本`;
+}
+
+/* タップした時だけ YouTube を読み込む（ページを軽くする） */
+grid.addEventListener('click', e => {
+  const t = e.target.closest('.thumb'); if (!t || t.querySelector('iframe')) return;
+  const f = document.createElement('iframe');
+  f.src = `https://www.youtube-nocookie.com/embed/${t.dataset.yt}?autoplay=1&rel=0&playsinline=1`;
+  f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true; f.title = 'YouTube video';
+  t.innerHTML = ''; t.appendChild(f);
+});
+
+q.addEventListener('input', render);
+render();
+</script>
+</body>
+</html>
